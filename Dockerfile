@@ -7,7 +7,7 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
 RUN apt-get install -y nodejs
 
 COPY --from=fin-node-utils /fin-node-utils /fin-node-utils
-RUN cd /fin-node-utils && npm install -g
+RUN cd /fin-node-utils && npm link
 ENV NODE_PATH /usr/lib/node_modules
 
 RUN mkdir /service
